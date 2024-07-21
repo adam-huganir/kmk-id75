@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "kmk-id75"
+package-mode = false
+description = ""
+authors = ["Adam Huganir <adam@huganir.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

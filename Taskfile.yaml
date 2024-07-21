@@ -1,0 +1,12 @@
+version: 3
+
+tasks:
+  init-windows:
+    cmds:
+      - pwsh
+      - -c
+      - "New-Item -type SymbolicLink -path $PWD/kmk -target $PWD/kmk_firmware/kmk"
+
+  init:
+    cmds:
+      - ln -s $PWD/kmk_firmware_kmk $PWD/kmk
