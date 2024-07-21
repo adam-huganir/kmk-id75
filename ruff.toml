@@ -1,0 +1,49 @@
+target-version = "py310"
+line-length = 120
+indent-width = 4
+extend-exclude = []
+
+[lint]
+# Add any individual rules you want to ignore below
+extend-ignore = [
+  "TRY003", # allow you to have long error messages
+  "TD002", "TD003", # don't require author and link
+  "B008", # typer uses syntax that violates this
+]
+# add any of the modules below you don't want to use
+ignore = [
+  "D",
+]
+# default enabled, annoyance level denoted by AN (subjective to @adam)
+select = [
+  "F", # Pyflakes AN: AN: n/a required
+  "E", # pycodestyle: errors      AN: n/a needed
+  "W", # pycodestyle: warnings AN: 3
+  "I", # isort, run `ruff check --config ruff.toml --select "I" --fix <files>`
+  "N", # pep8-naming: probably too much
+  "D", # pydoctstyle
+  "UP", #
+  "S", # flake8-bandit
+  "C4", # flake8-comprehensions
+  "DJ", # flake8-django
+  "EXE", # flake8-executable
+  "FA", # flake8-future-annotations
+  "ICN", # flake8-import-conventions
+  "PT", # flake8-pytest-style
+
+  "SIM",
+  "ASYNC", # flake8-async
+  "TD",
+  "TRY",
+  # Some single usecase ones, e.g. must have __init__.py file in namespace
+  "INP", # flake8-no-pep420 must have init.py
+  "RSE", #
+]
+exclude = []
+
+[lint.per-file-ignores]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
