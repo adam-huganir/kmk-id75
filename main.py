@@ -10,6 +10,7 @@ keyboard.modules.append(layers)
 keyboard.extensions.append(rgb)
 
 from keymaps import default
+
 keyboard.keymap = default
 
 if __name__ == "__main__":

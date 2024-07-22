@@ -1,7 +1,9 @@
 target-version = "py310"
 line-length = 120
 indent-width = 4
-extend-exclude = []
+extend-exclude = [
+  "kmk", "kmk_firmware"
+]
 
 [lint]
 # Add any individual rules you want to ignore below
