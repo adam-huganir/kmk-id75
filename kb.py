@@ -18,7 +18,7 @@ class KMKKeyboard(_KMKKeyboard):
     led_key_pos = list(range(75))
 
     def __init__(self):
-        # create and register the scanner
+        # the keypad scanner has issues with ghosting on key 15/30/45, so we are using the digitalio scanner
         self.matrix = MatrixScanner(
             self.col_pins,
             self.row_pins,
