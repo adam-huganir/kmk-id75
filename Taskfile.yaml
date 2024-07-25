@@ -1,7 +1,7 @@
 version: 3
 
 tasks:
-  init-windows:
+  init-win:
     cmds:
       - pwsh
       - -c
@@ -10,3 +10,17 @@ tasks:
   init:
     cmds:
       - ln -s $PWD/kmk_firmware_kmk $PWD/kmk
+
+  install-code-win:
+    cmds:
+      - pwsh -c "cp -Recurse -Force ./keymaps {{ .DRIVE }}"
+      - pwsh -c "cp ./kb.py  {{ .DRIVE }}"
+      - pwsh -c "cp ./main.py {{ .DRIVE }}"
+
+  install-kmk:
+    cmds:
+      - cp -r $PWD/kmk_firmware/kmk $PWD/kmk
+
+  connect-win:
+    cmd: |-
+      rshell.exe -p COM5 repl

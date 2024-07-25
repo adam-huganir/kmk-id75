@@ -1,15 +1,23 @@
-from kb import KMKKeyboard
-from kmk.modules.layers import Layers
-from kmk.extensions.peg_rgb_matrix import Color
-from kmk.extensions.peg_rgb_matrix import Rgb_matrix
+import board
+
+from kb import KMKKeyboard, # Rgb_matrix
+# from kmk.extensions.peg_rgb_matrix import Color
+# from kmk.modules.layers import Layers
 
 keyboard = KMKKeyboard()
-layers = Layers()
-rgb = Rgb_matrix(ledDisplay=75 * [Color.WHITE])
-keyboard.modules.append(layers)
-keyboard.extensions.append(rgb)
+# layers = Layers()
+# rgb = Rgb_matrix(
+#     rgb_pixel_pin=board.GP2,
+#     num_pixels=75,
+#     disable_auto_write=False,
+#     brightness_limit=0.25,
+#     led_key_pos=list(range(75)),
+#     led_display=75 * [Color.PURPLE],
+# )
+# keyboard.modules.extend((layers,))
+# keyboard.extensions.extend((rgb,))
 
-from keymaps import default
+from keymaps import default # noqa:  E402
 
 keyboard.keymap = default
 
