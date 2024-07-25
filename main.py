@@ -5,7 +5,7 @@ from kmk.extensions.peg_rgb_matrix import Rgb_matrix
 
 keyboard = KMKKeyboard()
 layers = Layers()
-rgb = Rgb_matrix(ledDisplay=75 * [Color.WHITE])
+rgb = Rgb_matrix(ledDisplay=75 * [Color.PURPLE])
 keyboard.modules.append(layers)
 keyboard.extensions.append(rgb)
 

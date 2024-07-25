@@ -1,7 +1,9 @@
 import board
+from digitalio import Pull
 
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
+from kmk.scanners.digitalio import MatrixScanner
 
 
 class KMKKeyboard(_KMKKeyboard):
@@ -12,7 +14,7 @@ class KMKKeyboard(_KMKKeyboard):
     num_pixels = 75
     disable_auto_write = False
     brightness_limit = 0.5
-    brightness_step=0.025
+    brightness_step = 0.025
     led_key_pos = list(range(75))
 
     def __init__(self):
@@ -21,7 +23,7 @@ class KMKKeyboard(_KMKKeyboard):
             self.col_pins,
             self.row_pins,
             diode_orientation=self.diode_orientation,
-            pull=digitalio.Pull.DOWN,
+            pull=Pull.DOWN,
             rollover_cols_every_rows=None,
             offset=0,
         )
