@@ -1,17 +1,23 @@
 from kb import KMKKeyboard
+from kmk.extensions.media_keys import MediaKeys
+from kmk.extensions.peg_rgb_matrix import Color, Rgb_matrix
+from kmk.modules.capsword import CapsWord
+from kmk.modules.holdtap import HoldTap
 from kmk.modules.layers import Layers
-from kmk.extensions.peg_rgb_matrix import Color
-from kmk.extensions.peg_rgb_matrix import Rgb_matrix
+from kmk.modules.mouse_keys import MouseKeys
+from kmk.modules.tapdance import TapDance
 
+    # make sure our key extension modules are loaded
+
+MODULES = (CapsWord(), Layers(), MouseKeys(), HoldTap(), TapDance())
+EXTENSIONS = (MediaKeys(), Rgb_matrix(ledDisplay=75 * [Color.PURPLE]))
 keyboard = KMKKeyboard()
-layers = Layers()
-rgb = Rgb_matrix(ledDisplay=75 * [Color.PURPLE])
-keyboard.modules.append(layers)
-keyboard.extensions.append(rgb)
+keyboard.modules.extend(MODULES)
+keyboard.extensions.extend(EXTENSIONS)
 
-from keymaps import default
+from keymaps import adam
 
-keyboard.keymap = default
+keyboard.keymap = adam
 
 if __name__ == "__main__":
     keyboard.debug_enabled = True

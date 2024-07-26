@@ -27,3 +27,4 @@ class KMKKeyboard(_KMKKeyboard):
             rollover_cols_every_rows=None,
             offset=0,
         )
+
